@@ -12,7 +12,7 @@ struct ExerciseView: View {
 
     let index: Int
     var exercise: Exercise { Exercise.exercises[index] }
-    let interval: TimeInterval = 3
+    let interval: TimeInterval = 30
     
     var body: some View {
         
@@ -48,8 +48,7 @@ struct ExerciseView: View {
 
 struct ExerciseView_Previews: PreviewProvider {
     static var previews: some View {
-        ExerciseView(index: 3)
-//            .previewLayout(.sizeThatFits)
+        ExerciseView(index: 0)
     }
 }
 

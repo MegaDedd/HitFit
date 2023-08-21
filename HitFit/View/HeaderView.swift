@@ -18,6 +18,7 @@ struct HeaderView: View {
             Text(exerciseName)
                 .font(.largeTitle)
             HStack {
+                Image(systemName: "hand.wave")
                 Image(systemName: "1.circle")
                 Image(systemName: "2.circle")
                 Image(systemName: "3.circle")

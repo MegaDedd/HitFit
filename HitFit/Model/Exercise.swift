@@ -24,15 +24,15 @@ extension Exercise {
     static let exercises = [
         Exercise(
             exerciseName: ExerciseEnum.squat.rawValue,
-            videoName: "squatVideo"),
+            videoName: "squat"),
         Exercise(
             exerciseName: ExerciseEnum.stepUp.rawValue,
-            videoName: "step-upVideo"),
+            videoName: "step-up"),
         Exercise(
             exerciseName: ExerciseEnum.burpee.rawValue,
-            videoName: "burpeeVideo"),
+            videoName: "burpee"),
         Exercise(
             exerciseName: ExerciseEnum.sunSalute.rawValue,
-            videoName: "sun-saluteVideo")
+            videoName: "sun-salute")
     ]
 }
