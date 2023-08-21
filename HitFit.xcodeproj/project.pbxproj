@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8BC4C3D02A93B2080061C419 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC4C3CF2A93B2080061C419 /* RatingView.swift */; };
+		8BC4C3D62A93BEB90061C419 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC4C3D52A93BEB90061C419 /* VideoPlayerView.swift */; };
 		8BC97AD02A935A4C00B372F3 /* HitFitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC97ACF2A935A4C00B372F3 /* HitFitApp.swift */; };
 		8BC97AD22A935A4C00B372F3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC97AD12A935A4C00B372F3 /* ContentView.swift */; };
 		8BC97AD42A935A4D00B372F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BC97AD32A935A4D00B372F3 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		8BC4C3CF2A93B2080061C419 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		8BC4C3D52A93BEB90061C419 /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
 		8BC97ACC2A935A4C00B372F3 /* HitFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HitFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BC97ACF2A935A4C00B372F3 /* HitFitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitFitApp.swift; sourceTree = "<group>"; };
 		8BC97AD12A935A4C00B372F3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				8BC97ADD2A935B9E00B372F3 /* WelcomeView.swift */,
 				8BC97ADF2A935BAE00B372F3 /* ExerciseView.swift */,
 				8BC97AE22A93698700B372F3 /* HeaderView.swift */,
+				8BC4C3D52A93BEB90061C419 /* VideoPlayerView.swift */,
 				8BC4C3CF2A93B2080061C419 /* RatingView.swift */,
 			);
 			path = View;
@@ -175,6 +178,7 @@
 				8BC97AD02A935A4C00B372F3 /* HitFitApp.swift in Sources */,
 				8BC97AE62A936BE700B372F3 /* Exercise.swift in Sources */,
 				8BC4C3D02A93B2080061C419 /* RatingView.swift in Sources */,
+				8BC4C3D62A93BEB90061C419 /* VideoPlayerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

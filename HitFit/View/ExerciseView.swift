@@ -23,20 +23,8 @@ struct ExerciseView: View {
                 HeaderView(exerciseName: exercise.exerciseName)
                     .padding(.bottom)
 
-                Image(exercise.videoName)
-                    .resizable()
-                    .frame(height: geometry.size.height * 0.45)
-
-                // MARK: VideoPlayer
-                /*
-                 if let url = Bundle.main.url(forResource: exercise.videoName, withExtension: "mp4") {
-             //                  VideoPlayer(player: AVPlayer(url: url))
-             //                    .frame(height: geometry.size.height * 0.45)
-             //                } else {
-             //                    Text("Couldn't find \(exercise.videoName).mp4")
-             //                      .foregroundColor(.red)
-             //                }
-                */
+                VideoPlayerView(videoName: exercise.videoName)
+                  .frame(height: geometry.size.height * 0.45)
                 
                 Text(Date().addingTimeInterval(interval), style: .timer)
                   .font(.system(size: geometry.size.height * 0.07))
@@ -64,5 +52,7 @@ struct ExerciseView_Previews: PreviewProvider {
 //            .previewLayout(.sizeThatFits)
     }
 }
+
+
 
 
