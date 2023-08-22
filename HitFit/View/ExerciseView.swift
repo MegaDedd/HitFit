@@ -20,7 +20,7 @@ struct ExerciseView: View {
             
             VStack {
                 
-                HeaderView(exerciseName: exercise.exerciseName)
+                HeaderView(TitleText: exercise.exerciseName)
                     .padding(.bottom)
 
                 VideoPlayerView(videoName: exercise.videoName)
