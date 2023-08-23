@@ -27,6 +27,7 @@
 		8BC97AE02A935BAE00B372F3 /* ExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC97ADF2A935BAE00B372F3 /* ExerciseView.swift */; };
 		8BC97AE32A93698700B372F3 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC97AE22A93698700B372F3 /* HeaderView.swift */; };
 		8BC97AE62A936BE700B372F3 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC97AE52A936BE700B372F3 /* Exercise.swift */; };
+		8BCDE15C2A95CAB90053BF58 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCDE15B2A95CAB90053BF58 /* TimerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		8BC97ADF2A935BAE00B372F3 /* ExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseView.swift; sourceTree = "<group>"; };
 		8BC97AE22A93698700B372F3 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		8BC97AE52A936BE700B372F3 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		8BCDE15B2A95CAB90053BF58 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				8BC4C3D52A93BEB90061C419 /* VideoPlayerView.swift */,
 				8BC4C3CF2A93B2080061C419 /* RatingView.swift */,
 				8B47B23C2A94B9A200737FA2 /* SuccessView.swift */,
+				8BCDE15B2A95CAB90053BF58 /* TimerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BCDE15C2A95CAB90053BF58 /* TimerView.swift in Sources */,
 				8B2246B22A93FD3400EF2E8A /* HistoryStoreDevData.swift in Sources */,
 				8BC97AE32A93698700B372F3 /* HeaderView.swift in Sources */,
 				8B2246B42A93FE8800EF2E8A /* ImageExtension.swift in Sources */,

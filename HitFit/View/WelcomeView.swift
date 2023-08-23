@@ -56,6 +56,7 @@ struct WelcomeView: View {
             }
             .sheet(isPresented: $showHistory) {
                 HistoryView(showHistory: $showHistory)
+                    .presentationDetents([.medium])
             }
         }
     }
