@@ -58,6 +58,19 @@ struct ExerciseView: View {
                 VideoPlayerView(videoName: exercise.videoName)
                   .frame(height: geometry.size.height * 0.45)
                 
+              
+                HStack(spacing: 150) {
+                  startButton
+                    buttonDone
+                  .disabled(!timerDone)
+                  .sheet(isPresented: $showSuccess) {
+                    SuccessView(selectedTab: $selectedTab)
+                      .presentationDetents([.medium, .large])
+                  }
+                }
+                .font(.title3)
+                .padding()
+
                 if showTimer {
                   TimerView(
                     timerDone: $timerDone,
@@ -65,22 +78,10 @@ struct ExerciseView: View {
                   )
                 }
                 
-                HStack(spacing: 150) {
-                    startButton
-                    buttonDone
-                        .disabled(!timerDone)
-                        .sheet(isPresented: $showSuccess) {
-                            SuccessView(selectedTab: $selectedTab)
-                                .presentationDetents([.large, .medium])
-                        }
-                }
-                .font(.title3)
-                .padding()
-                
-                RatingView(rating: $rating)
-                    .padding()
-                
                 Spacer()
+                
+                RatingView(rating: $rating) // Move RatingView below Spacer
+                  .padding()
                 
                 Button("History") { }
                   .padding(.bottom)
