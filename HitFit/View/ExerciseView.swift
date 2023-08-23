@@ -12,12 +12,15 @@ struct ExerciseView: View {
 
     let index: Int
     var exercise: Exercise { Exercise.exercises[index] }
+    
     @State private var timerDone: Bool = false
     @State private var showTimer: Bool = false
+    @State private var showHistory = false
     
     @State private var rating = 0
     @State private var showSuccess: Bool = false
     @Binding var selectedTab: Int
+    @EnvironmentObject var history: HistoryStore
 
     var startButton: some View {
         Button("start exercise") {
@@ -30,8 +33,9 @@ struct ExerciseView: View {
     }
     
     var buttonDone: some View {
+        
         Button("done") {
-            
+            history.addDoneExercise(Exercise.exercises[index].exerciseName)
             timerDone = false
             showTimer.toggle()
             
@@ -40,7 +44,6 @@ struct ExerciseView: View {
             } else {
                 selectedTab += 1
             }
-            
         }
     }
     
@@ -83,7 +86,12 @@ struct ExerciseView: View {
                 RatingView(rating: $rating) 
                   .padding()
                 
-                Button("History") { }
+                Button("History") {
+                    showHistory.toggle()
+                }
+                .sheet(isPresented: $showHistory) {
+                  HistoryView(showHistory: $showHistory)
+                }
                   .padding(.bottom)
             }
 
@@ -93,7 +101,8 @@ struct ExerciseView: View {
 
 struct ExerciseView_Previews: PreviewProvider {
     static var previews: some View {
-        ExerciseView(index: 3, selectedTab: .constant(3))
+        ExerciseView(index: 0, selectedTab: .constant(0))
+            .environmentObject(HistoryStore())
     }
 }
 
