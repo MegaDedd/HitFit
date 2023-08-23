@@ -12,14 +12,17 @@ struct ExerciseView: View {
 
     let index: Int
     var exercise: Exercise { Exercise.exercises[index] }
-    let interval: TimeInterval = 30
+    @State private var timerDone: Bool = false
+    @State private var showTimer: Bool = false
     
     @State private var rating = 0
     @State private var showSuccess: Bool = false
     @Binding var selectedTab: Int
 
     var startButton: some View {
-        Button("start exercise") { }
+        Button("start exercise") {
+              showTimer.toggle()
+        }
     }
     
     var lastExercise: Bool { // явл ли последним упраж
@@ -28,6 +31,10 @@ struct ExerciseView: View {
     
     var buttonDone: some View {
         Button("done") {
+            
+            timerDone = false
+            showTimer.toggle()
+            
             if lastExercise {
                 showSuccess.toggle()
             } else {
@@ -51,12 +58,17 @@ struct ExerciseView: View {
                 VideoPlayerView(videoName: exercise.videoName)
                   .frame(height: geometry.size.height * 0.45)
                 
-                Text(Date().addingTimeInterval(interval), style: .timer)
-                  .font(.system(size: geometry.size.height * 0.07))
+                if showTimer {
+                  TimerView(
+                    timerDone: $timerDone,
+                    size: geometry.size.height * 0.07
+                  )
+                }
                 
                 HStack(spacing: 150) {
                     startButton
                     buttonDone
+                        .disabled(!timerDone)
                         .sheet(isPresented: $showSuccess) {
                             SuccessView(selectedTab: $selectedTab)
                                 .presentationDetents([.large, .medium])
