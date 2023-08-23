@@ -50,7 +50,7 @@ struct ExerciseView: View {
         
         GeometryReader { geometry in
             
-            VStack {
+            VStack(spacing: 0) {
                 
                 HeaderView(selectedTab: $selectedTab, titleText: exercise.exerciseName)
                     .padding(.bottom)
@@ -80,7 +80,7 @@ struct ExerciseView: View {
                 
                 Spacer()
                 
-                RatingView(rating: $rating) // Move RatingView below Spacer
+                RatingView(rating: $rating) 
                   .padding()
                 
                 Button("History") { }
