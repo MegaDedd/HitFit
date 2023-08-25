@@ -12,6 +12,9 @@ struct HitFitApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .onAppear {
+                    print(URL.documentsDirectory)
+                    }
         }
     }
 }
