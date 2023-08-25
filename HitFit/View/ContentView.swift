@@ -9,7 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var selectedTab = 9
+    // Problem:
+    // SceneStorage повторно инициализирует TabView,когда сохраняет selectedTab, поэтому когда меняем вкладку,то повторно инициализируется HistoryStore. Если сделать упражнение, то история не сохранится.
+    @SceneStorage("selectedTab") private var selectedTab = 9
     
     var body: some View {
         
