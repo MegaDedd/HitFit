@@ -45,9 +45,6 @@ struct ExerciseView: View {
             }
         }
     }
-    
-    
-    
     var body: some View {
         
         GeometryReader { geometry in
