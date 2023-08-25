@@ -10,9 +10,13 @@ import SwiftUI
 @main
 
 struct HitFitApp: App {
+    
+    @StateObject private var historyStore = HistoryStore()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(historyStore)
                 .onAppear {
                     print(URL.documentsDirectory)
                 }
