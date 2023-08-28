@@ -17,12 +17,17 @@ struct ContentView: View {
     
     var body: some View {
         
-        TabView(selection: $selectedTab) {
+        ZStack {
             
-            WelcomeView(selectedTab: $selectedTab)
+            GradientBackground()
             
-            ForEach(Exercise.exercises.indices, id: \.self) { index in
-                ExerciseView(index: index, selectedTab: $selectedTab)
+            TabView(selection: $selectedTab) {
+                
+                WelcomeView(selectedTab: $selectedTab)
+                
+                ForEach(Exercise.exercises.indices, id: \.self) { index in
+                    ExerciseView(index: index, selectedTab: $selectedTab)
+                }
             }
         }
          // MARK: Solution Problem:
