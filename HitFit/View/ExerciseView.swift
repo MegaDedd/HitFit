@@ -9,7 +9,7 @@ import SwiftUI
 import AVKit
 
 struct ExerciseView: View {
-
+    
     let index: Int
     var exercise: Exercise { Exercise.exercises[index] }
     
@@ -20,10 +20,10 @@ struct ExerciseView: View {
     @State private var showSuccess: Bool = false
     @Binding var selectedTab: Int
     @EnvironmentObject var history: HistoryStore
-
+    
     var startButton: some View {
-        Button("start exercise") {
-              showTimer.toggle()
+        RaisedButton(buttonText: "Start Exercise") {
+            showTimer.toggle()
         }
     }
     
@@ -45,6 +45,20 @@ struct ExerciseView: View {
             }
         }
     }
+    
+    var historyButton: some View {
+        Button(
+            action: {
+                showHistory = true
+            }, label: {
+                Text("History")
+                    .fontWeight(.bold)
+                    .padding([.leading, .trailing], 5)
+            })
+        .padding(.bottom, 10)
+        .buttonStyle(EmbossedButtonStyle())
+    }
+    
     var body: some View {
         
         GeometryReader { geometry in
@@ -53,44 +67,51 @@ struct ExerciseView: View {
                 
                 HeaderView(selectedTab: $selectedTab, titleText: exercise.exerciseName)
                     .padding(.bottom)
-
-                VideoPlayerView(videoName: exercise.videoName)
-                  .frame(height: geometry.size.height * 0.45)
-                
-              
-                HStack(spacing: 150) {
-                  startButton
-                    buttonDone
-                  .disabled(!timerDone)
-                  .sheet(isPresented: $showSuccess) {
-                    SuccessView(selectedTab: $selectedTab)
-                      .presentationDetents([.medium, .large])
-                  }
-                }
-                .font(.title3)
-                .padding()
-
-                if showTimer {
-                  TimerView(
-                    timerDone: $timerDone,
-                    size: geometry.size.height * 0.07
-                  )
-                }
                 
                 Spacer()
                 
-                RatingView(exerciseIndex: index) 
-                  .padding()
-                
-                Button("History") {
-                    showHistory.toggle()
+                ContainerView {
+                    VStack {
+                        
+                        VideoPlayerView(videoName: exercise.videoName)
+                            .frame(height: geometry.size.height * 0.45)
+                        
+                        
+                        HStack(spacing: 150) {
+                            startButton
+                            buttonDone
+                                .disabled(!timerDone)
+                                .sheet(isPresented: $showSuccess) {
+                                    SuccessView(selectedTab: $selectedTab)
+                                        .presentationDetents([.medium, .large])
+                                }
+                        }
+                        .font(.title3)
+                        .padding()
+                        
+                        if showTimer {
+                            TimerView(
+                                timerDone: $timerDone,
+                                size: geometry.size.height * 0.07
+                            )
+                        }
+                        
+                        Spacer()
+                        
+                        RatingView(exerciseIndex: index)
+                            .padding()
+                        
+                        historyButton
+                        
+                            .sheet(isPresented: $showHistory) {
+                                HistoryView(showHistory: $showHistory)
+                            }
+                            .padding(.bottom)
+                    }
                 }
-                .sheet(isPresented: $showHistory) {
-                  HistoryView(showHistory: $showHistory)
-                }
-                  .padding(.bottom)
+                .frame(height: geometry.size.height * 0.8)
             }
-
+            
         }
     }
 }
